@@ -30,11 +30,12 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#334FFA",
-    padding: 20,
     borderRadius: 10,
     alignItems: "center",
+    height: 50,
   },
   buttonText: {
+    marginVertical: 12,
     color: "white",
     size: 16,
     lineHeight: 21.86,

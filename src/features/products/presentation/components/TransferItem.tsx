@@ -2,9 +2,18 @@ import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native"
 import { Product } from "../../domain"
 import { formatDate } from "../utils"
 
-export const TransferItem = ({ product }: { product: Product }) => {
+export const TransferItem = ({
+  product,
+  navigation,
+}: { product: Product; navigation: any }) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.navigate("Product Details", {
+          productId: product.id,
+        })
+      }
+    >
       <View style={[styles.container]}>
         <View style={{ flex: 0.2 }}>
           <Image

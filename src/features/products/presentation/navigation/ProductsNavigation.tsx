@@ -9,8 +9,16 @@ export const ProductsNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Products Dashboard" component={ProductsDashboard} />
-        <Stack.Screen name="Product Details" component={ProductDetails} />
+        <Stack.Screen
+          name="Products Dashboard"
+          component={ProductsDashboard}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Product Details"
+          component={ProductDetails}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )

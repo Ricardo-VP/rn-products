@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from "react-native"
 
-export const Header = () => {
+export const DashboardHeader = () => {
   return (
     <View style={[styles.container]}>
       <Text style={[styles.title]}>Bienvenido de vuelta!</Text>
