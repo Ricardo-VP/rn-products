@@ -1,6 +1,6 @@
 import { Product, ProductRepository } from "../domain"
 
-export default class GetProductsUseCase {
+export class GetProductsUseCase {
   private productRepository: ProductRepository
 
   constructor(productRepository: ProductRepository) {
