@@ -13,6 +13,7 @@ export const ProductsDashboard = ({
   const {
     products,
     filteredProducts,
+    totalPoints,
     category,
     filterProductsByCategory,
   } = useProducts(new ProductRepositoryMockApiImpl())
@@ -23,7 +24,7 @@ export const ProductsDashboard = ({
     <AppContainer>
       <View style={{ height: height - 175 }}>
         <DashboardHeader />
-        <Points />
+        <Points points={totalPoints} />
         <TransfersList
           data={filteredProducts || products}
           navigation={navigation}

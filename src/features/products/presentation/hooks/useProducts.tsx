@@ -11,6 +11,7 @@ export const useProducts = (productRepository: ProductRepository) => {
   const [products, setProducts] = useState<Product[]>([])
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
   const [category, setCategory] = useState<Category>(Category.All)
+  const [totalPoints, setTotalPoints] = useState<number>(0)
 
   const getProductById = async (id: string) => {
     return await productRepository.getProductById(id)
@@ -43,6 +44,12 @@ export const useProducts = (productRepository: ProductRepository) => {
       const products = await productRepository.getProducts()
       setProducts(products)
       setFilteredProducts(products)
+
+      const totalPoints = products.reduce(
+        (total, product) => total + product.points,
+        0
+      )
+      setTotalPoints(totalPoints)
     }
     fetchProducts()
   }, [])
@@ -50,6 +57,7 @@ export const useProducts = (productRepository: ProductRepository) => {
   return {
     category,
     products,
+    totalPoints,
     getProductById,
     filteredProducts,
     filterProductsByCategory,

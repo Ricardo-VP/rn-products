@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native"
 
 import { getActualMonth } from "../utils"
 
-export const Points = () => {
+export const Points = ({ points }: { points: number }) => {
   return (
     <View>
       <Text style={[styles.titleText]}>Tus puntos</Text>
@@ -11,7 +11,9 @@ export const Points = () => {
         <Text style={[styles.bodyText, styles.monthLabel]}>
           {getActualMonth()}
         </Text>
-        <Text style={[styles.bodyText, styles.pointsLabel]}>10,000.00 pts</Text>
+        <Text style={[styles.bodyText, styles.pointsLabel]}>
+          {points} pts
+        </Text>
       </View>
     </View>
   )
